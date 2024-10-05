@@ -3,7 +3,6 @@ using EmployeeAdmin.Data;
 using EmployeeAdmin.Model;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
-using NLog.Extensions.Logging;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,8 +20,6 @@ var mapperConfig = new MapperConfiguration(mc =>
 
 IMapper mapper = mapperConfig.CreateMapper();
 builder.Services.AddSingleton(mapper);
-
-
 
   builder.Services.AddDbContext<AppDbContext>(options =>
 {
